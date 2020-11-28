@@ -1,0 +1,30 @@
+<%- include('header') -%>
+<h1>Home page</h1>
+
+<div class="home">
+    <div class="container-2">
+  
+        <h1><%= startingContent.postTitleNames %> </h1>
+        <p>
+            <%=  startingContent.postMassageNames %>
+        </p>
+    </div>
+
+
+    <% posts.forEach(function(post){%>
+        <div class="container-1">
+            <h1><%= post.postName %> </h1>
+            <p>
+                <%= post.postMassege.substring(0,100) + " ..."  %>
+                <a href="/posts/<%=post._id%>">Read more</a>
+            </p>
+        </div>
+        
+   <%  }); %> 
+
+  
+    
+
+</div>
+
+<%- include('footer') -%>
